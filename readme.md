@@ -1,6 +1,6 @@
 # Social Link Widget
 Contributors: gratrockstar  
-Plugin Site: http://damemedia.com  
+Plugin Site: https://github.com/gratrockstar/social-links-widget 
 Tags: Social Media, Widgets  
 Requires at least: 3.0  
 Tested up to: 4.9.6  

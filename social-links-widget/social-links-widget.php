@@ -32,7 +32,7 @@ class SocialLinksWidget extends WP_Widget {
   /**
    * Constructor
    */
-  function SocialLinksWidget() {
+  function __construct() {
     
     // set our widget options
     $widget_ops = [
@@ -41,7 +41,7 @@ class SocialLinksWidget extends WP_Widget {
     ];
     
     // create widget
-    parent::WP_Widget( 'SocialLinksWidget', 'Social Links Widget', $widget_ops );
+    parent::__construct( 'SocialLinksWidget', 'Social Links Widget', $widget_ops );
     
     // Add list of services, wrapped in filter to allow to change order
     $this->services = apply_filters( 'social_links_widget_services', [
@@ -216,5 +216,7 @@ class SocialLinksWidget extends WP_Widget {
 }
 
 // Add our action to widgets_init
-add_action( 'widgets_init', create_function( '', 'return register_widget("SocialLinksWidget");' ) );
+add_action( 'widgets_init', function() {
+  register_widget( 'SocialLinksWidget', 'Social Links Widget' );
+} );
 
